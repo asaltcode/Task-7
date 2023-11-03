@@ -28,14 +28,6 @@ api.onload = function () {
 
   //e. Print the country that uses US dollars as currency.
   console.log("==> E.)");
-  const dollar = result.map((curr) => curr.currencies);
-  // let res = dollar.map(val => val)
-  for (i of dollar) {
-    for (l in i) {
-    }
-    let res = i;
-    if (i[l].symbol == "$") {
-      console.log(i[l].name);
-    }
-  }
-};
+const dollar = result.filter((value)=> value.currencies && value.currencies.USD)
+dollar.forEach((doll)=> console.log(doll.name.common))
+}
